@@ -110,7 +110,7 @@ body>* {
 
 .helpers {
   position: absolute;
-  opacity: 0;
+  display: none;
   height: fit-content;
   font-size: 2.75rem;
   font-family: "Rubik";

@@ -16,7 +16,7 @@ const typeText = (text, choices) => {
   typing = true
   let index = 0
   let type = setInterval(() => {
-    helper.style["opacity"] = 0
+    helper.style["display"] = "none"
     if (index < text.length) {
       dialogBox.children[1].children[1].innerHTML += text[index];
       index += 1
@@ -32,7 +32,7 @@ const typeText = (text, choices) => {
         dialogBox.children[2].appendChild(button)
       });
       if (currentScene == 0 && currentText == 1) {
-        helper.style["opacity"] = 1
+        helper.style["display"] = "block"
       }
     }
   }, 30);
@@ -108,6 +108,9 @@ document.addEventListener("keydown", (e) => {
   if (e.key == " " || e.key == "Enter") {
     loadText()
   }
+})
+document.querySelector(".dialog-box").addEventListener("click", (e) => {
+  loadText()
 })
 
 const changeScene = (id) => {
